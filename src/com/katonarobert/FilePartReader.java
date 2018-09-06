@@ -76,19 +76,23 @@ public class FilePartReader {
     }
 
     public String readLines(String filepath, int fromLine, int toLine) {
-        String currentString = read("/Users/katonarobert/IdeaProjects/oop-java-filepartreader-with-junit-robertkatona/src/example.txt");
+        String currentString = read(filepath);
+        String result = "";
         try {
             StringReader reader = new StringReader(currentString);
             BufferedReader br = new BufferedReader(reader);
             String line;
             int linuNumberCounter = 1;
+            StringBuffer stringBuffer = new StringBuffer();
             while ((line = br.readLine()) != null) {
                 if (linuNumberCounter >= fromLine && linuNumberCounter <= toLine) {
-                    System.out.println(line);
+                    stringBuffer.append(line);
+                    stringBuffer.append("\n");
                     linuNumberCounter ++;
                 }
             }
-            return "";
+            result = stringBuffer.toString();
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
             return "";
