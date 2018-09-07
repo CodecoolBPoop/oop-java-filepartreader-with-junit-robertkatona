@@ -1,11 +1,9 @@
 package com.katonarobert;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class FileWordAnalyzer {
@@ -20,7 +18,7 @@ public class FileWordAnalyzer {
 
     public ArrayList wordsByABC(){
         ArrayList arrayListFromString = new ArrayList();
-        String stringToArrayList = filePartReader.readLines(filePath,1,13);
+        String stringToArrayList = filePartReader.readLines(1,13);
         try {
             StringReader reader = new StringReader(stringToArrayList);
             BufferedReader br = new BufferedReader(reader);
@@ -42,7 +40,7 @@ public class FileWordAnalyzer {
 
     public ArrayList wordsContainingSubString(String subString){
         ArrayList arrayListContainingSubString = new ArrayList();
-        String stringToArrayList = filePartReader.readLines(filePath,1,13);
+        String stringToArrayList = filePartReader.readLines(1,13);
         CharSequence seq = subString;
         try {
             StringReader reader = new StringReader(stringToArrayList);
@@ -64,7 +62,7 @@ public class FileWordAnalyzer {
 
     public ArrayList wordsArePalindrome(){
         ArrayList arrayListWordsArePalindrome = new ArrayList();
-        String stringToArrayList = filePartReader.readLines(filePath,1,13);
+        String stringToArrayList = filePartReader.readLines(1,13);
         try {
             StringReader reader = new StringReader(stringToArrayList);
             BufferedReader br = new BufferedReader(reader);

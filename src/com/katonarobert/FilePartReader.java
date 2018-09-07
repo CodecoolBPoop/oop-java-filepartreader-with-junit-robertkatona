@@ -1,20 +1,40 @@
 package com.katonarobert;
 
 import java.io.*;
-import java.nio.file.Path;
-import java.util.Scanner;
 import java.lang.String;
 
 public class FilePartReader {
 
-    public static void setup(String filepath, Integer fromLine, Integer toLine) {
+    private static String filePath = "/Users/katonarobert/IdeaProjects/oop-java-filepartreader-with-junit-robertkatona/src/example.txt";
+    private int fromLine = 0;
+    private int toLine = 0;
+
+    public FilePartReader() {
+        this.fromLine = fromLine;
+        this.toLine = toLine;
+    }
+
+    public static String getFilePath() {
+        return filePath;
+    }
+
+    public int getFromLine() {
+        return fromLine;
+    }
+
+    public int getToLine() {
+        return toLine;
+    }
+
+    public static String setup(String filePath, Integer fromLine, Integer toLine) {
         if (toLine < fromLine || fromLine < 1) {
             throw new IllegalArgumentException("Fromline's value is equal or smaller than toline's value");
+        } else {
+            return readLines(fromLine, toLine);
         }
     }
 
-    public String read(String filePath) {
-
+    public static String read() {
         try {
             File file = new File(filePath);
             FileReader fileReader = new FileReader(file);
@@ -75,9 +95,9 @@ public class FilePartReader {
     */
     }
 
-    public String readLines(String filepath, int fromLine, int toLine) {
-        String currentString = read(filepath);
-        String result = "";
+    public static String readLines(int fromLine, int toLine) {
+        String currentString = read();
+        String result;
         try {
             StringReader reader = new StringReader(currentString);
             BufferedReader br = new BufferedReader(reader);
