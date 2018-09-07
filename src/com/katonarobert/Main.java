@@ -10,6 +10,10 @@ public class Main {
         String exampleStringFromLineToLine = fpr.readLines("/Users/katonarobert/IdeaProjects/oop-java-filepartreader-with-junit-robertkatona/src/example.txt", 0,7);
         //System.out.println(exampleStringFromLineToLine);
         FileWordAnalyzer fwa = new FileWordAnalyzer(fpr,"/Users/katonarobert/IdeaProjects/oop-java-filepartreader-with-junit-robertkatona/src/example.txt");
-        ArrayList<String> exampleArrayList = fwa.wordsByABC();
+        //ArrayList<String> exampleArrayList = fwa.wordsByABC();
+        //ArrayList<String> exampleSubString = fwa.wordsContainingSubString("abcd");
+        ArrayList<String> examplePalindrome = fwa.wordsArePalindrome();
+        System.out.println(examplePalindrome);
+
     }
 }
