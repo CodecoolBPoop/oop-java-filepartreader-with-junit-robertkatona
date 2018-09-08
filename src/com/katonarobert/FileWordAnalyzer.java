@@ -16,7 +16,7 @@ public class FileWordAnalyzer {
         this.filePath = filePath;
     }
 
-    public ArrayList wordsByABC(){
+    public ArrayList wordsByABC() {
         ArrayList arrayListFromString = new ArrayList();
         String stringToArrayList = filePartReader.readLines(1,13);
         try {

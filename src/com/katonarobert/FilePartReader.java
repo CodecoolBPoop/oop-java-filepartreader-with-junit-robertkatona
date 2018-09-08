@@ -5,11 +5,12 @@ import java.lang.String;
 
 public class FilePartReader {
 
-    private static String filePath = "/Users/katonarobert/IdeaProjects/oop-java-filepartreader-with-junit-robertkatona/src/example.txt";
-    private int fromLine = 0;
-    private int toLine = 0;
+    private static String filePath;
+    private int fromLine = 1;
+    private int toLine = 1;
 
-    public FilePartReader() {
+    public FilePartReader(String filePath) {
+        this.filePath = filePath;
         this.fromLine = fromLine;
         this.toLine = toLine;
     }
@@ -22,12 +23,21 @@ public class FilePartReader {
         return fromLine;
     }
 
+    public void setFromLine(int fromLine) {
+        this.fromLine = fromLine;
+    }
+
     public int getToLine() {
         return toLine;
     }
 
-    public static String setup(String filePath, Integer fromLine, Integer toLine) {
-        if (toLine < fromLine || fromLine < 1) {
+    public void setToLine(int toLine) {
+        this.toLine = toLine;
+    }
+
+    public static String setup(Integer fromLine, Integer toLine) {
+        boolean checkingNumbers = (fromLine > 0 && toLine >= fromLine);
+        if (!checkingNumbers) {
             throw new IllegalArgumentException("Fromline's value is equal or smaller than toline's value");
         } else {
             return readLines(fromLine, toLine);
